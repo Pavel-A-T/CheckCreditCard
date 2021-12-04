@@ -1,5 +1,8 @@
 export function checkCard(cardNumber) {
   let result = 0;
+  if (cardNumber.length < 12 || cardNumber.length > 20) {
+    return false;
+  }
   for (let i = 0; i < cardNumber.length; i += 1) {
     let digit = Number(cardNumber[i]);
     if (i % 2 === 0) digit *= 2;
